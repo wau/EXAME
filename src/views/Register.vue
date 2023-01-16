@@ -121,7 +121,7 @@ export default {
 			const exists = await this.$store.dispatch('user/userExists', user);
 			if (exists) {
 				console.log("existe na BD");
-                alert("email já existe na bd");
+                //alert("email já existe na bd");
 			}
 			else { //add user to database
 				console.log("teste aq");
