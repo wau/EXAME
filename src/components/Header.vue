@@ -33,8 +33,12 @@
 							  <!-- <li>
 								  <router-link v-if="userAuth" to="/orders">My Orders</router-link>
 							  
-							  </li>								  			          	           -->
+							  </li>
+							  								  			          	           -->
 
+							  <li v-if="userAuth">
+								  <a>Welcome {{name}} <a/>
+							  </li>
 							  <li>
 								  <router-link to="/menu">Menu</router-link>
 							 </li>	
@@ -65,6 +69,7 @@ export default {
 	 data() {
 		return {
 			userAuth: false,
+			name: undefined,
 		}
 	},
 
@@ -86,6 +91,7 @@ export default {
     },
 	created() {
 		this.userAuth = this.$store.getters['user/getUser'].id != undefined;
+		this.name = this.$store.getters['user/getUser'].name
 	}
 }
 
